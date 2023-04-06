@@ -1,1 +1,1 @@
-a=()=>{location.reload()};if(id){a()}else{const id=navigator.userAgent}import (bans) from "bans.js";for(c in bans){if(id===bans[c]){document.write("You Have Been Banned")}else{import(ids,perms) from "perms.js";for(c in ids){if(id===ids[c]){import("perm-"+perms[c]+".js")}else{import("perms-basic.js")}}}}
+a=()=>{location.reload()};if(id){a()}else{const id=navigator.userAgent}import (bans) from "bans.js";for(c in bans){if(id===bans[c]){document.write("You Have Been Banned")}else{import("perms-basic.js")}
