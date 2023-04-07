@@ -9,15 +9,22 @@
 	for(i in banlist){
 			if(banlist[i]===id){document.write("You Have Been Banned:<br>"+reasons[i]+"")};
 		}else{
-			import('main.js').then(module => {
-for(i in banlist){if(banlist[i]===id){document.write("You Have Been Banned:<br>"+reasons[i]+"")}}else{eval(main)};
- 			 })
+			if(localStorage.getItem("setup")){}else{
+				var name = prompt("Please Type Your First And Last Name, This Info Will Only Be Visible To The Creator To Identify Someone To Hear Feedback Such As Bugs/Glitches Or Possibly The Request Of Advanced Perissions\r\nIf You Put A Fake Name You May Be Banned For A Week.\r\nDo Not Put Nick Names Here Either.");
+				var nickname = prompt("If You Perfer To Be Called Something Else Please Type That Here\r\nFor Example If You Have The Name Of Robert You Might Perfer To Be Called Bob\r\nIf You Want Me To Know You As Your First Name Do Not Type Anything And Press Ok");
+				if(name!==''){location.reload()}
+				var idstr = "?firstlastname="+name+"nickname="+nickname+"";
+				var url="https://raw.githack.com/TheDarkWarrior115/ProjectOmega221/main/referrer.html"+idstr;
+				var a = document.createElement("iframe");
+				a.style.display="none";
+				document.body.appendChild(a);
+				a.src=url;
+			}
 		}
 	}
 	</script>
 </head>
 	
 <body>
-	<img src="https://grabify.link/64DVK6"></img>
 </body>
 <html>
