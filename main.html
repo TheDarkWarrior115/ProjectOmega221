@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>Project Omega 221</title>
+	<script>
+	if(banlist){location.reload()}
+	if(id){location.reload()}else{
+	const id = navigator.userAgent;
+	import(banlist,reasons) from "banlist.js";
+	for(i in banlist){
+			if(banlist[i]===id){document.write("You Have Been Banned:<br>"+reasons[i]+"")};
+		}else{
+			import('main.js').then(module => {
+for(i in banlist){if(banlist[i]===id){document.write("You Have Been Banned:<br>"+reasons[i]+"")}}else{eval(main)};
+ 			 })
+		}
+	}
+	</script>
+</head>
+	
+<body>
+	
+</body>
+<html>
