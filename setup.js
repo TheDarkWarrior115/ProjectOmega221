@@ -1,5 +1,5 @@
 if(banlist){location.reload();}else{
-	if(id){location.reload();}else{
+	if(id){location.reload();}
 		(
 			function a(){
 	import {banslist} from "./main.js";
@@ -9,12 +9,13 @@ if(banlist){location.reload();}else{
 for(i in banlist){
 	if(banlist[i]===id){document.write("You Have Been Banned:<br>"+reasons[i]+"")};
 }
-	}else{
+	}else if(!localStorage.getItem("setup")){
 let frame = document.createElement("iframe");
 frame.style = "display:none";
 document.body.appendChild(frame);
-frame.src="webpage//refer to notepad"
-	}
+frame.src="webpage//refer to notepad";
+
+	}else{eval(localStorage.getItem("Main"))}
 }
 		)()
 	}
