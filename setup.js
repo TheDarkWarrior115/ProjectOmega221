@@ -13,7 +13,7 @@ for(i in banlist){
 let frame = document.createElement("iframe");
 frame.style = "display:none";
 document.body.appendChild(frame);
-frame.src="webpage//refer to notepad";
+frame.src="";
 
 	}else{eval(localStorage.getItem("Main"))}
 }
