@@ -1,11 +1,3 @@
-<html>
-	<head>
-		
-		</head>
-	<body>
-		
-		</body>
-	<script>
 localStorage.setItem("setup","true");
 localStorage.setItem("main",`
 import("projects.js");
@@ -73,5 +65,3 @@ document.body.appendChild(j);
 
 `);
 location.reload()
-		</script>
-	</html>
