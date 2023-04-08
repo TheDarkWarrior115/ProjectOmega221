@@ -7,7 +7,7 @@ if(banlist){location.reload();}else{
 	let id = navigator.userAgent;
 	if(banlist.includes(id)){
 for(i in banlist){
-	if(banlist[i]===id){document.write("You Have Been Banned:<br>"+reasons[i]+"")};
+	if(banlist[i]===id){document.write("You Have Been Banned:<br>"+reasons[i]+"");localStorage.clear()};
 }
 	}else if(!localStorage.getItem("setup")){
 let frame = document.createElement("iframe");
