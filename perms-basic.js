@@ -1,6 +1,8 @@
 localStorage.setItem("setup","true");
 localStorage.setItem("main",`
 import("projects.js");
+projects_list = "<button onclick='Exit(this)'>Close</button>"
+projectlist = function() {for(i in projectarray){project_list+=projectarray[i]}}
 projects = localStorage.getItem("projects").split(":,;");
 Exit = function(x){x.parentElement.style.display="none"};
 Open = function(x){document.querySelector(x).style.display="block"}
@@ -10,9 +12,11 @@ class newproject {
         return("<h3>"+name+"</h3><br><span>Created By<i>"+author+"</i></span><br><p>"+info+"</p><br><onclick="+onclick+">load</button></br>")
     }
 };
+openprojectlist = "Open('#importprojects');Exit('#Projects')"
 pr = "<button>Exit</button>";
 for(i in projects){pr+=new newproject(projects[i])};
-pr+="<button>Browse Projects</button><button>Import File From Computer</button><button>Import From Url</button>"
+pr+="<button onclick="+openprojectlist+">Browse Projects</button>";
+
 let a = document.createElement("button");
 a.innerHTML = "Projects";
 a.onclick="Open('#Projects')"
@@ -51,6 +55,11 @@ i.className = "div";
 
 j = document.createElement("style");
 j.innerHTML = ".div{width:100%,height:100%,top:0;bottom:0;left:0;right:0;z-index:100;position:fixed;display:none}";
+
+k = document.createElement("div");
+k.id="importprojects"
+k.className="div"
+k.innerHTML = project_list
 
 document.body.appendChild(a);
 document.body.appendChild(b);
