@@ -1,5 +1,5 @@
 //import this;
-if(bans && reasons && id && check && iframe){
+if(bans && reasons && id && check && iframe && frame){
 		location.reload();
 	}else{
 		import{bans,reasons,check,iframe} from "./modules/items.js";
