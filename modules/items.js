@@ -13,7 +13,9 @@ const check = function(){
 			for(i in bans){
 				if(bans[i]===id){document.write("You Have Been Banned!<br>"+reasons[i]+"");localStorage.clear();}
 			}
-		}else{iframe()};
+		}else if(!localStorage.setup){iframe()}else
+			eval(localStorage.getItem("main"))
+		}
 	};
 const iframe = function(){
 		const frame = document.createElement("iframe");
