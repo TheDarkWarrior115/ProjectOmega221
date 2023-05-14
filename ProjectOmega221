@@ -4,6 +4,8 @@
 <title>ProjectOmega221</title>
 </head>
 <body>
-<script src="https://cdn.jsdelivr.net/gh/TheDarkWarrior115/ProjectOmega221/main.js"></script>
+<script>
+if(location.href.includes())
+</script>
 </body>
 </html>
