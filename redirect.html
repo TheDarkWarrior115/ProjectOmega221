@@ -1,21 +1,34 @@
-<!--redirect pass info to server from client for review:redircts!-->
+<!--redirect, pass info to server from client for review:redircts!-->
 <html>
 <head>
 	<script>
-		function submit(x){
-		if(x===1){
-			refer chatgpt
-		}else if(x===2){
-			write
-		}else if(x===3){
-				log
-			}
-		}
-		</script>
+const repoOwner = 'TheDarkWarrior115';
+const repoName = 'ProjectOmega221';
+const filePath = 'main.js';
+const accessToken = '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';//key is read only for this repo;
+decrypt = function(){}
+read = function(){
+	$.ajax({
+  url: `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`,
+  headers: {
+    Authorization: `Bearer ${accessToken}`
+  },
+  method: 'GET',
+  dataType: 'json',
+  success: function (data) {
+    const content = atob(data.content);
+    
+  },
+  error: function (error) {
+    //
+  }
+});
+};
+
+	</script>
 </head>
 <body>
-	<a id="login" href="https://iplogger.org/login_account"></a>result+=?close
-	<a id="create" href="https://iplogger.org/createaccount"></a>result+=?close
-	<a id="reset" href="https://iplogger.org/resetPassword"></a>result+=?close
+	<a id="create" href="https://iplogger.org/createaccount"></a>
+	<a id="reset" href="https://iplogger.org/resetPassword"></a>
 </body>
 </html>
