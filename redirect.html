@@ -4,10 +4,37 @@
 	<script>
 const repoOwner = 'TheDarkWarrior115';
 const repoName = 'ProjectOmega221';
-const filePath = 'main.js';
-const accessToken = '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';//key is read only for this repo;
-decrypt = function(){}
-read = function(){
+const accessToken = atob('Z2l0aHViX3BhdF8xMUEzVVRSVEEwOTRaSTVvamlkeU1BX2U2MkVSalAyRE1lN3F3dXdCZXdwOFE1TjBGakdQOG9Kb0hGeGNoVFNvc0Y3NVRUNldBUG9meThFd2dq');//key is read only for this repo;
+function fClose(){window.parent.document.querySelector("iframe").remove()}
+decrypt = function(key,txt){
+    txt=atob(txt);
+    txt=txt.split(" ");
+    password="";
+    for(i in key){
+        password+=key.charCodeAt(i);
+    };
+    password=parseInt(password);
+    dec="dec = ["
+    for(i in txt){
+        dec+=txt.at(i)+",";
+    }
+    l = dec.length;
+    dec=dec.substring(0,l-1);
+    dec+="]";
+    console.log(dec)
+    eval(dec);
+    decrypted = "dec = ["
+    for(i in dec){decrypted+=dec.at(i)/password+","};
+    decrypted=decrypted.substring(0,decrypted.length-1);
+    decrypted+="]";
+    eval(decrypted);
+    dec = dec.map(elem => parseInt(elem,2));
+    dec = dec.map(elem => String.fromCharCode(elem));
+    dec=dec.join("");
+    return(dec)
+};
+read = function(pwd,username){
+	filePath = "users/"+username+".account"
 	$.ajax({
   url: `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`,
   headers: {
@@ -16,19 +43,30 @@ read = function(){
   method: 'GET',
   dataType: 'json',
   success: function (data) {
-    const content = atob(data.content);
-    
+    let content = atob(data.content);
+	window.parent.eval(decrypt(pwd,content));
+	fClose();
   },
   error: function (error) {
-    //
+    window.parent.incorrectCreds();
   }
 });
 };
-
+function createAccount(infoString){
+	location.href+="?accountinfo="+infoString+"";
+};
+function forgotPassword(info){
+	location.href+="?forgotpassword="+info+"";
+}
 	</script>
 </head>
 <body>
 	<a id="create" href="https://iplogger.org/createaccount"></a>
 	<a id="reset" href="https://iplogger.org/resetPassword"></a>
 </body>
+	<script>
+		if(location.href.includes("?accountinfo")){document.querySelector("#create").click()};
+		if(location.href.includes("?forgotpassword")){document.querySelector("#reset").click()};
+		if(location.href.includes("?close")){fClose()};
+		</script>
 </html>
