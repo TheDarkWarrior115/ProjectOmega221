@@ -44,8 +44,10 @@ read = function(pwd,username){
   dataType: 'json',
   success: function (data) {
     let content = atob(data.content);
-	window.parent.eval(decrypt(pwd,content));
-	fClose();
+	if(!content.includes("eval")){window.parent.incorrectCreds();}else{
+		window.parent.eval(decrypt(pwd,content));
+		fClose();
+	}
   },
   error: function (error) {
     window.parent.incorrectCreds();
