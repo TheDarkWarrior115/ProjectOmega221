@@ -7,7 +7,7 @@
 	</body>
 	<script>
 	if(localStorage.login){
-	eval(localStorage.getItem("login"));
+	eval(atob(localStorage.getItem("login")));
 	}else{import("https://cdn.jsdelivr.net/gh/TheDarkWarrior115/ProjectOmega221/main.js")}
 	</script>
 </html>
